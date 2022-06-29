@@ -1,0 +1,24 @@
+﻿@*
+    //Created by Gulkota Priyanka
+*@<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priyanka Imax Theatre</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+       <nav>
+           <a class="nav" asp-controller="Home" asp-action="Index">Index</a>
+           <a class="nav" asp-controller="Events" asp-action="EventList">Events</a>
+           <a class="nav" asp-controller="Home" asp-action="About">About</a>
+
+        </nav>
+    </header>
+    <div class="bodyDiv">
+            @RenderBody()
+    </div>
+</body>
+</html>

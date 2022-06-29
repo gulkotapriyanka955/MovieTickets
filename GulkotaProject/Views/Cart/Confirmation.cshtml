@@ -1,0 +1,48 @@
+﻿@*
+    Gulkota Priyanka
+*@
+@{
+}
+@model Sale
+@{
+    ViewData["Title"] = "Confirmation";
+}
+<h2> Order Confirmation</h2>
+<table>
+    <tr>
+        <td class="td2">Order date :</td>
+        <td> @Model.SaleDate</td>
+    </tr>
+    <tr>
+        <td class="td2">Event :</td>
+        <td> @Model.EventName</td>
+    </tr>
+    <tr>
+        <td class="td2">Ticket Price :</td>
+        <td> @Model.TicketPrice</td>
+    </tr>
+    <tr>
+        <td class="td2">Number of tickets</td>
+        <td> @Model.Count</td>
+    </tr>
+    <tr>
+        <td class="td2">Sub total :</td>
+        <td> @Model.SubTotal.ToString("C2")</td>
+    </tr>
+    <tr>
+        <td class="td2">Discount Amount :</td>
+        <td> @Model.SaleDiscount.ToString("C2")</td>
+    </tr>
+    <tr>
+        <td class="td2">Delivery Fee :</td>
+        <td> @Model.DeliveryCharge.ToString("C2")</td>
+    </tr>
+    <tr>
+        <td class="td2">Amount Due :</td>
+        <td> @Model.AmountDue.ToString("C2")</td>
+    </tr>
+</table>
+@{
+    Layout = "_Layout";
+}
+

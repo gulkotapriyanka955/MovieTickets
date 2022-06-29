@@ -1,0 +1,36 @@
+﻿@*
+    Gulkota Priyanka
+*@
+@model ListViewModel
+@{
+}
+<div>
+    <p>
+        <a asp-controller="Events" asp-action="EventList" asp-route-id="All">All Events</a>
+        @* The loops read the list of the categories and creates a link for each category *@
+        @foreach (Category cat in Model.Categories)
+        {
+            <a asp-controller="Events" asp-action="EventList" asp-route-id="@cat.Name"><p>@cat.Name</p></a>
+        }
+    </p>
+    <p>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">@Model.SelectedCategory Events</th>
+                </tr>
+            </thead>
+            @foreach (var evt in Model.Events)
+            {
+               <tr>
+                   <td>
+                       @evt.Title
+                   </td>
+                   <td>
+                        <a asp-controller="Events" asp-action="Details" asp-route-id="@evt.ID">View Details</a>
+                   </td>
+               </tr> 
+            }@*foreach*@
+        </table>
+    </p>
+</div>

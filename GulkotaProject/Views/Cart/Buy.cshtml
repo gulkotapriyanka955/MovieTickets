@@ -1,0 +1,50 @@
+﻿@*
+    Gulkota Priyanka
+*@
+@{
+}
+@model Sale
+
+<h2> Buy Tickets</h2>
+<form asp-action="Confirmation" method="post">
+    <div asp-validation-summary="All"></div>
+    <table>
+        <tr>
+            <td class="td2">Event:</td>
+            <td><input asp-for="EventName" value="@Model.EventName" class="readonly" readonly /></td>
+        </tr>
+        <tr>
+            <td class="td2">Ticket Price:</td>
+            <td><input asp-for="TicketPrice" value="@Model.TicketPrice" class="readonly" readonly /></td>
+        </tr>
+        <tr>
+            <td class="td2">Name:</td>
+            <td><input asp-for="CustomerName"/></td>
+        </tr>
+        <tr>
+            <td class="td2">Email:</td>
+            <td><input asp-for="Email"/></td>
+        </tr>
+        <tr>
+            <td class="td2">No of tickets:</td>
+            <td><input asp-for="Count"/></td>
+        </tr>
+        <tr>
+            <td class="td2">Check if applicable:</td>
+            <td><input asp-for="SeniorDiscount"/>
+                <label asp-for="SeniorDiscount">Senior Discount</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="td2">Select a delivery option:</td>
+            <td><select asp-for="SelectedDelivery" asp-items="Model.DeliveryOptions">
+                <option value="">Not Selected</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> <button type="submit">Complete Transaction</button></td>
+        </tr>
+    </table>
+</form>

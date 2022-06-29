@@ -1,0 +1,31 @@
+﻿@*
+    Gulkota Priyanka
+*@
+    
+@{
+}
+@model Event
+
+<h3>Event Details</h3>
+<div>
+    <img src="~/Images/@Model.ImageID" alt="@Model.Title Image" />
+</div>
+<div>
+    <h5>@Model.Title</h5>
+    <table>
+        <tr>
+            <td>Description</td>
+            <td>@Model.Description</td>
+        </tr>
+        <tr>
+            <td>Ticket Price: </td>
+            <td>@Model.TicketPrice</td>
+        </tr>
+    </table>
+    <div>
+         <a asp-controller="Cart" asp-action="Buy" asp-route-id="@Model.ID">Buy tickets for this event</a>
+    </div>
+    <div>
+         <a asp-controller="Events" asp-action="EventList">Back to Event List</a>
+    </div>
+</div>
